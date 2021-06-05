@@ -16,7 +16,8 @@
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
     <collectiontypes>
-        <collectiontype code="OpeningActors" elementtype="java.lang.String" type="collection" generate="true" autocreate="true"/>
+        <collectiontype code="OpeningActors" elementtype="java.lang.String" type="collection" generate="true"
+                        autocreate="true"/>
     </collectiontypes>
 
     <enumtypes>
@@ -112,6 +113,10 @@
                 </attribute>
                 <attribute qualifier="openingActors" type="OpeningActors">
                     <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="daysUntil" type="java.lang.Long">
+                    <persistence type="dynamic" attributeHandler="concertDaysUntilAttributeHandler"/>
+                    <modifiers read="true" write="false"/>
                 </attribute>
             </attributes>
         </itemtype>
