@@ -15,9 +15,8 @@
 
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
-
     <collectiontypes>
-        <collectiontype code="OpeningActors" elementtype="Concert" type="collection" generate="true" autocreate="true"/>
+        <collectiontype code="OpeningActors" elementtype="java.lang.String" type="collection" generate="true" autocreate="true"/>
     </collectiontypes>
 
     <enumtypes>
