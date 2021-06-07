@@ -16,8 +16,7 @@
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="items.xsd">
 
     <collectiontypes>
-        <collectiontype code="OpeningActors" elementtype="java.lang.String" type="collection" generate="true"
-                        autocreate="true"/>
+        <collectiontype code="OpeningActors" elementtype="OpeningActor" type="set"/>
     </collectiontypes>
 
     <enumtypes>
@@ -61,7 +60,21 @@
         <itemtype code="Venue" autocreate="true" generate="true">
             <deployment table="Venues" typecode="30270"/>
             <attributes>
+                <attribute qualifier="city" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
                 <attribute qualifier="venue2CountTickets" type="Venue2CountTickets">
+                    <persistence type="property"/>
+                </attribute>
+            </attributes>
+        </itemtype>
+        <itemtype code="OpeningActor">
+            <deployment table="actors" typecode="30272"/>
+            <attributes>
+                <attribute qualifier="code" type="java.lang.String">
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="name" type="java.lang.String">
                     <persistence type="property"/>
                 </attribute>
             </attributes>

@@ -1,0 +1,5 @@
+INSERT_UPDATE OpeningActor;code[unique=true];name;
+;OA0001;xXX_MAN_XXx;
+;OA0002;xXX_WOMAN_XXx;
+;OA0003;xXX_CHILD_XXx;
+;OA0004;xXX_GUY_XXx;
