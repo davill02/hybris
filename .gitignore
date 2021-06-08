@@ -1,5 +1,6 @@
 /log
 /temp
+/data/hsqldb
 /bin/
-!/bin/custom
+!/bin/custom/
 /roles

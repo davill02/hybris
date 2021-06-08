@@ -1,0 +1,4 @@
+INSERT_UPDATE Venue;city[unique=true];venue2CountTickets(key,value);
+;Minsk;Minsk-Arena->10000|Chizhowka-Arena->7000;
+;Borisov;Borisov-Arena->6000;
+;New York;New City Hall->2000;
