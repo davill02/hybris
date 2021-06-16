@@ -39,6 +39,10 @@
         <property name="importService" ref="importService"/>
     </bean>
 
+    <bean id="concerttourEventListener" class="concerttours.events.NewBandEventListener" parent="abstractEventListener">
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
     <bean id="concerttoursService" class="concerttours.service.impl.DefaultConcerttoursService">
         <property name="modelService" ref="modelService"/>
         <property name="mediaService" ref="mediaService"/>
