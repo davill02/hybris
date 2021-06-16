@@ -2,5 +2,8 @@
 /temp
 /data/hsqldb
 /bin/
-!/bin/custom/
+!/bin/custom
 /roles
+/data
+/.idea
+/bin/.idea
