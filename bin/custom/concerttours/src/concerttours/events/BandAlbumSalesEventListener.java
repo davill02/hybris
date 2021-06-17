@@ -3,6 +3,7 @@ import de.hybris.platform.servicelayer.event.impl.AbstractEventListener;
 import de.hybris.platform.servicelayer.model.ModelService;
 import java.util.Date;
 import concerttours.model.NewsModel;
+import org.springframework.beans.factory.annotation.Required;
 
 public class BandAlbumSalesEventListener extends AbstractEventListener<BandAlbumSalesEvent>
 {
@@ -13,6 +14,7 @@ public class BandAlbumSalesEventListener extends AbstractEventListener<BandAlbum
     {
         return modelService;
     }
+    @Required
     public void setModelService(final ModelService modelService)
     {
         this.modelService = modelService;

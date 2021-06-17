@@ -1,0 +1,6 @@
+INSERT_UPDATE Token; token[unique = true];
+                   ;anyString;
+INSERT_UPDATE CronJob; code[unique = true]     ; job(code)           ; singleExecutable; sessionLanguage(isocode)
+                     ; changeTokenValueCronJob ; changeTokenValueJob ; false           ; de
+INSERT_UPDATE Trigger; cronjob(code)[unique = true]; cronExpression
+                     ; changeTokenValueCronJob     ; * 30 * * * ?
