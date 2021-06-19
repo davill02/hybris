@@ -3,5 +3,9 @@
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
     <extension dir="../custom/concerttours"/>
     <extension dir="../custom/musicbandstory"/>
+    <extension name="platformbackoffice"/>
+    
+    <extension name="yempty" />
+    <extension name="yhacext" />
   </extensions>
 </hybrisconfig>
