@@ -18,8 +18,8 @@ public class ChangeTokenValueJob extends AbstractJobPerformable<CronJobModel> {
     public PerformResult perform(CronJobModel cronJobModel) {
         try {
             tokenService.generateNewTokenValue();
-        }catch (NoSuchElementException exception){
-            new PerformResult(CronJobResult.FAILURE, CronJobStatus.FINISHED);
+        } catch (NoSuchElementException exception) {
+            return new PerformResult(CronJobResult.FAILURE, CronJobStatus.FINISHED);
         }
         return new PerformResult(CronJobResult.SUCCESS, CronJobStatus.FINISHED);
     }
