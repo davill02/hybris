@@ -42,6 +42,7 @@ public class DefaultConcerttoursServiceIntegrationTest extends ServicelayerBaseT
 	private FlexibleSearchService flexibleSearchService;
 
 	@Before
+
 	public void setUp() throws Exception
 	{
 		concerttoursService.createLogo(PLATFORM_LOGO_CODE);

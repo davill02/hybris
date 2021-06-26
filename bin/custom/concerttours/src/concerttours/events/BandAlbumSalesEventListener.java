@@ -1,31 +1,37 @@
 package concerttours.events;
+
+import concerttours.model.NewsModel;
+import de.hybris.platform.servicelayer.config.ConfigurationService;
 import de.hybris.platform.servicelayer.event.impl.AbstractEventListener;
 import de.hybris.platform.servicelayer.model.ModelService;
-import java.util.Date;
-import concerttours.model.NewsModel;
 import org.springframework.beans.factory.annotation.Required;
 
-public class BandAlbumSalesEventListener extends AbstractEventListener<BandAlbumSalesEvent>
-{
-    private static final String BAND_SALES_HEADLINE = "%s album sales exceed 50000";
-    private static final String BAND_SALES_CONTENT = "%s album sales reported as %d";
+import javax.annotation.Resource;
+import java.util.Date;
+
+public class BandAlbumSalesEventListener extends AbstractEventListener<BandAlbumSalesEvent> {
+    private static final String BAND_SALES_HEADLINE = "concerttours.band.sale.headline";
+    private static final String BAND_SALES_CONTENT = "concerttours.band.sale.content";
+    @Resource
+    private ConfigurationService configurationService;
     private ModelService modelService;
-    public ModelService getModelService()
-    {
+
+    public ModelService getModelService() {
         return modelService;
     }
+
     @Required
-    public void setModelService(final ModelService modelService)
-    {
+    public void setModelService(final ModelService modelService) {
         this.modelService = modelService;
     }
+
     @Override
-    protected void onEvent(final BandAlbumSalesEvent event)
-    {
-        if (event != null)
-        {
-            final String headline = String.format(BAND_SALES_HEADLINE, event.getName());
-            final String content = String.format(BAND_SALES_CONTENT, event.getName(), event.getSales());
+    protected void onEvent(final BandAlbumSalesEvent event) {
+        if (event != null) {
+            String bandDefaultHeadline = configurationService.getConfiguration().getString(BAND_SALES_HEADLINE);
+            final String headline = String.format(bandDefaultHeadline, event.getName());
+            String bandDefaultContent = configurationService.getConfiguration().getString(BAND_SALES_CONTENT);
+            final String content = String.format(bandDefaultContent, event.getName(), event.getSales());
             final NewsModel news = modelService.create(NewsModel.class);
             news.setDate(new Date());
             news.setHeadline(headline);

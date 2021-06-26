@@ -1,10 +1,10 @@
 <hybrisconfig xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xsi:noNamespaceSchemaLocation='../bin/platform/resources/schemas/extensions.xsd'>
   <extensions>
     <path dir='${HYBRIS_BIN_DIR}' autoload='false' />
-    <extension dir="../custom/concerttours"/>
-    <extension dir="../custom/musicbandstory"/>
+    <extension name="concerttours"/>
+    <extension name="musicbandstory"/>
     <extension name="platformbackoffice"/>
-    
+
     <extension name="yempty" />
     <extension name="yhacext" />
   </extensions>
