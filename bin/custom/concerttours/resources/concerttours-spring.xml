@@ -27,6 +27,7 @@
         <constructor-arg ref="concerttoursService"/>
     </bean>
 
+
     <alias name="defaultBandService" alias="bandService"/>
     <bean id="defaultBandService" class="concerttours.service.impl.DefaultBandService"/>
 
@@ -64,4 +65,5 @@
 
     <bean id="changeTokenValueJob" class="concerttours.jobs.ChangeTokenValueJob" parent="abstractJobPerformable">
     </bean>
+
 </beans>
