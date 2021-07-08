@@ -97,7 +97,10 @@
                 <attribute qualifier="name" type="java.lang.String">
                     <description>name of band</description>
                     <persistence type="property"/>
-                    <modifiers optional="false" unique="true"/>
+                    <modifiers optional="true" unique="true"/>
+                </attribute>
+                <attribute qualifier="image" type="MediaContainer">
+                    <persistence type="property"/>
                 </attribute>
                 <attribute qualifier="history" type="localized:java.lang.String">
                     <description>history of band</description>
