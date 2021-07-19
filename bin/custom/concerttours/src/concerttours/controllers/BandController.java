@@ -25,15 +25,15 @@ public class BandController {
 
     @RequestMapping(value = "/bands")
     public String showBands(final Model model) {
+        catalogVersionService.setSessionCatalogVersion(CATALOG_ID, CATALOG_VERSION_NAME);
         final List<BandData> bands = bandFacade.getAllBands();
         model.addAttribute("bands", bands);
         return "BandList";
     }
 
     @RequestMapping(value = "/bands/{bandId}")
-    public String showBandDetails(@PathVariable final String bandId, final Model model) throws UnsupportedEncodingException {
+    public String showBandDetails(@PathVariable final String bandId, final Model model) {
         catalogVersionService.setSessionCatalogVersion(CATALOG_ID, CATALOG_VERSION_NAME);
-        final String decodedBandId = URLDecoder.decode(bandId, "UTF-8");
         final BandData band = bandFacade.getBandById(bandId);
         model.addAttribute("band", band);
         return "BandDetails";

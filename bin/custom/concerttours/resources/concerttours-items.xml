@@ -97,7 +97,10 @@
                 <attribute qualifier="name" type="java.lang.String">
                     <description>name of band</description>
                     <persistence type="property"/>
-                    <modifiers optional="false" unique="true"/>
+                    <modifiers optional="true" unique="true"/>
+                </attribute>
+                <attribute qualifier="image" type="MediaContainer">
+                    <persistence type="property"/>
                 </attribute>
                 <attribute qualifier="history" type="localized:java.lang.String">
                     <description>history of band</description>
@@ -145,6 +148,17 @@
 
         <itemtype generate="true" code="News" autocreate="true">
             <deployment table="News" typecode="30273"/>
+            <custom-properties>
+                <property name="catalogItemType">
+                    <value>java.lang.Boolean.TRUE</value>
+                </property>
+                <property name="catalogVersionAttributeQualifier">
+                    <value>"catalogVersion"</value>
+                </property>
+                <property name="uniqueKeyAttributeQualifier">
+                    <value>"headline"</value>
+                </property>
+            </custom-properties>
             <attributes>
                 <attribute qualifier="date" type="java.util.Date">
                     <description>date of news item</description>
@@ -152,6 +166,11 @@
                 </attribute>
                 <attribute qualifier="headline" type="java.lang.String">
                     <description>short headline for the news item</description>
+                    <modifiers read="true" write="true" search="true" optional="false" unique="true"/>
+                    <persistence type="property"/>
+                </attribute>
+                <attribute qualifier="catalogVersion" type="CatalogVersion">
+                    <modifiers read="true" write="true" search="true" optional="false"/>
                     <persistence type="property"/>
                 </attribute>
                 <attribute qualifier="content" type="java.lang.String">

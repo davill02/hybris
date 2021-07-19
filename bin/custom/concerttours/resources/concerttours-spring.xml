@@ -64,4 +64,14 @@
 
     <bean id="changeTokenValueJob" class="concerttours.jobs.ChangeTokenValueJob" parent="abstractJobPerformable">
     </bean>
+
+    <bean id="newsCatalogAwareInterceptor" class="concerttours.interceptors.NewsCatalogAwareInterceptor">
+        <property name="defaultCatalog" value="Default"/>
+        <property name="defaultCatalogVersion" value="Online"/>
+    </bean>
+    <bean id="NewsValidateInterceptorMapping"
+          class="de.hybris.platform.servicelayer.interceptor.impl.InterceptorMapping">
+        <property name="interceptor" ref="newsCatalogAwareInterceptor"/>
+        <property name="typeCode" value="News"/>
+    </bean>
 </beans>
